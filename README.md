@@ -11,7 +11,7 @@ pip3 install -r requirements.txt
 ## Usage
 
 ```bash
-check_AMAlerts.py <alertManager_URL> <crit_level> <alt_hostname> <tls_enable>
+check_AlertManager.py <alertManager_URL> <crit_level> <alt_hostname> <tls_enable>
 ```
 
 ## Help
