@@ -11,14 +11,12 @@ pip3 install -r requirements.txt
 ## Usage
 
 ```bash
-check_alertmanager TBD better documentation
+check_AMAlerts.py <alertManager_URL> <crit_level> <alt_hostname> <tls_enable>
 ```
 
 ## Help
 
-``` text
-check_AMAlerts.py <alertManager_URL> <crit_level> <alt_hostname> <tls_enable>
-
+``` markdown
 Arguments
 
     -h, --help:  Show this help message and exit
