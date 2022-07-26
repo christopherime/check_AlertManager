@@ -1,8 +1,17 @@
 #! /usr/bin/env python3
 
 __author__ = "Christophe Rime"
+__email__ = "christopherime@me.com"
+__repository__ = "https://github.com/christopherime/check_AlertManager"
 __version__ = "1.0.1"
 __description__ = "Nagios plugin to check alerts on AlertManager"
+
+# Nagios dev info https://nagios-plugins.org/doc/guidelines.html
+#     Value	    Status
+#       0         OK
+#       1       Warning
+#       2	    Critical
+#       3	    Unknown
 
 # Importing modules
 import requests, json, sys
@@ -87,10 +96,9 @@ for alert in alertsList:
         critCounter +1
         
 # Checking if there is at least one alert
-if alertsList[0]:
-    if alertsList[0]['status']['state'] != 'suppressed':
-        print(alertsList[0]['annotations']['summary'])
-        sys.exit(1)
+if critCounter > 0:
+    print("Alerts Detected on " + hostname)
+    sys.exit(2)
 
 # No alert found
 print('No alerts')
